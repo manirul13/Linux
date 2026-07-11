@@ -23,5 +23,8 @@ void signal_handler(int num)
 }
 
 /*
-1. Default task, when ctrl+c is pressed, the process will be termiated.
+Default behavior:
+- Ctrl+C generates SIGINT, whose default action is to terminate the process.
+- In this program, SIGINT is ignored using SIG_IGN, so Ctrl+C has no effect.
+- Ctrl+Z generates SIGTSTP, which stops (suspends) the process unless handled or ignored.
 */
